@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VELOUR PLATINUM - Crimson Premium</title>
+    <title>BurmaHD - Premium Streaming</title>
     
+    <!-- Adsterra Popunder Code -->
     <script src="https://pl30149725.effectivecpmnetwork.com/72/36/71/723671d6fb365692e8aae17ed2085563.js"></script>
 
+    <!-- Adsterra Social Bar Code -->
     <script src="https://pl30149726.effectivecpmnetwork.com/22/3d/45/223d45507315c360b0744fa53a9dbbfc.js"></script>
 
     <style>
@@ -67,9 +69,9 @@
             margin-bottom: 12px;
         }
         .header-logo-row h2 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 900;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: var(--text-light);
         }
         .header-logo-row h2 span {
@@ -409,10 +411,11 @@
 
 <div class="app-container">
 
+    <!-- 18+ Gate Security -->
     <div class="guard-overlay-gate" id="ageGate">
         <div class="guard-panel-box">
             <div style="font-size: 50px; margin-bottom: 15px;">🔞</div>
-            <h2>Velour Crimson</h2>
+            <h2>BurmaHD Premium</h2>
             <p>ဤဝဘ်ဆိုက်တွင် အသက် ၁၈ နှစ်ပြည့်ပြီးသူများသာ ကြည့်ရှုသင့်သည့် အကြောင်းအရာများ ပါဝင်သည်။ သင်သည် အသက် ၁၈ နှစ် ပြည့်ပြီးပြီလား။</p>
             <div class="guard-action-buttons">
                 <button class="guard-btn guard-yes" onclick="grantVerification()">ပြည့်ပါပြီ</button>
@@ -421,9 +424,10 @@
         </div>
     </div>
 
+    <!-- Sticky Native Header Setup -->
     <header>
         <div class="header-logo-row">
-            <h2>VELOUR <span>CRIMSON</span></h2>
+            <h2>Burma<span>HD</span></h2>
             <button class="home-hub-btn" onclick="backToHomeFeed()">Home Hub</button>
         </div>
         <div class="search-box-wrap">
@@ -432,12 +436,14 @@
         </div>
     </header>
 
+    <!-- Content Center Shell -->
     <div id="homeMainModule">
         
+        <!-- Automated Moving Showcase Slider Component -->
         <div class="showcase-slider">
             <div class="slide-frame active" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1525&auto=format&fit=crop');">
                 <div class="slide-info">
-                    <h3>VELOUR <span>PREMIUM</span></h3>
+                    <h3>BurmaHD <span>PREMIUM</span></h3>
                     <p>အမြန်နှုန်းအမြင့်ဆုံးဆာဗာများဖြင့် ကြည်လင်ပြတ်သားစွာ အပန်းဖြေကြည့်ရှုလိုက်ပါ။</p>
                 </div>
             </div>
@@ -449,6 +455,7 @@
             </div>
         </div>
 
+        <!-- Telegram Bot သို့ တိုက်ရိုက်လမ်းညွှန်ပေးထားသည့် VIP Card -->
         <div class="vip-promo-card">
             <div class="vip-left">
                 <div class="vip-icon-badge">👑</div>
@@ -459,6 +466,7 @@
             <a href="https://t.me/yoyolayvip_bot" target="_blank" class="vip-action-btn">VIP ဝယ်မည်</a>
         </div>
 
+        <!-- Pill Category List Selection Track -->
         <div class="category-scroll-bar">
             <div class="pill-item active" onclick="switchCategoryFilter(this, 'myanmar')">ALL</div>
             <div class="pill-item" onclick="switchCategoryFilter(this, 'myanmar')">MYANMAR</div>
@@ -469,11 +477,13 @@
 
         <h3 class="feed-section-title" id="feedTitleLabel">နောက်ဆုံးရ ကားများ</h3>
         
+        <!-- Native 2 Column Render Target Block -->
         <div class="video-thumbnail-grid" id="mainVideoAppendGrid"></div>
 
         <div class="spinning-wheel-loader" id="gridNetworkLoader" style="display:none;"></div>
     </div>
 
+    <!-- Media Player Workspace Overlay Layout -->
     <div class="cinema-theater-panel" id="theaterModuleBox">
         <div class="video-player-frame-box">
             <iframe id="embedVideoFrame" src="" allowfullscreen></iframe>
@@ -483,6 +493,8 @@
         
         <h3 class="feed-section-title" style="padding-left:0;">ဆက်စပ်ဗီဒီယိုများ</h3>
         <div class="video-thumbnail-grid" id="recommendationAppendGrid"></div>
+        
+        <div class="spinning-wheel-loader" id="theaterNetworkLoader" style="display:none;"></div>
     </div>
 
 </div>
@@ -492,8 +504,8 @@
     let searchFilterQuery = 'myanmar';
     let currentFeedPage = 1;
     let fallbackPageNum = 1;
-    let isLoadingData = false; // ဒေတာတွေ ထပ်ခါထပ်ခါ မခေါ်အောင် Lock ချရန်
-    let isInTheaterMode = false; // Player အခြေအနေမှာ အောက်ဆွဲရင် Main Feed ဒေတာထပ်မတိုးစေရန်
+    let isLoadingData = false; 
+    let isInTheaterMode = false; 
 
     // Automatic Showcase Slider Logic
     let pointerSlideIdx = 0;
@@ -598,14 +610,21 @@
         });
     }
 
-    // Infinite Scroll Implementation (အောက်ဆွဲရင် အလိုအလျောက် ပေါ်လာစေမည့် စနစ်)
+    // Unified Global Infinite Scroll Loop (Main Feed ကော Related Grid အတွက်ပါ)
     window.onscroll = function() {
-        if (isInTheaterMode) return; // Player ဖွင့်ထားရင် Infinite Scroll ခေတ္တရပ်မယ်
-        
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 600) {
-            if(!isLoadingData) {
-                currentFeedPage++;
-                executeDataFetchRequest(searchFilterQuery, currentFeedPage, true);
+            if (!isInTheaterMode) {
+                // Main Feed Area Scroll Down
+                if(!isLoadingData) {
+                    currentFeedPage++;
+                    executeDataFetchRequest(searchFilterQuery, currentFeedPage, true);
+                }
+            } else {
+                // Theater Cinema Mode Related Scroll Down
+                if(!isLoadingData) {
+                    fallbackPageNum++;
+                    appendMoreTheaterSuggestions();
+                }
             }
         }
     };
@@ -628,7 +647,7 @@
         const targetSideGrid = document.getElementById("recommendationAppendGrid");
         targetSideGrid.innerHTML = "";
         
-        const backupUrl = `${API_ENDPOINT_URL}?query=${encodeURIComponent(searchFilterQuery)}&per_page=4&page=${fallbackPageNum}&thumbsize=big`;
+        const backupUrl = `${API_ENDPOINT_URL}?query=${encodeURIComponent(searchFilterQuery)}&per_page=6&page=${fallbackPageNum}&thumbsize=big`;
         try {
             const res = await fetch(backupUrl);
             const json = await res.json();
@@ -636,6 +655,29 @@
                 renderVideoThumbnails(randomizeDataOrder(json.videos), targetSideGrid);
             }
         } catch(e) { console.log(e); }
+    }
+
+    // Related Section ထဲမှာ အောက်ဆွဲရင် ဗီဒီယိုအသစ်တွေ ထပ်တိုးပေးမယ့် function
+    async function appendMoreTheaterSuggestions() {
+        isLoadingData = true;
+        const subLoader = document.getElementById("theaterNetworkLoader");
+        const targetSideGrid = document.getElementById("recommendationAppendGrid");
+        
+        subLoader.style.display = "block";
+        const targetPage = fallbackPageNum;
+        const backupUrl = `${API_ENDPOINT_URL}?query=${encodeURIComponent(searchFilterQuery)}&per_page=6&page=${targetPage}&thumbsize=big`;
+        
+        try {
+            const res = await fetch(backupUrl);
+            const json = await res.json();
+            if(json && json.videos && json.videos.length > 0) {
+                renderVideoThumbnails(randomizeDataOrder(json.videos), targetSideGrid);
+            }
+        } catch(e) { console.log(e); }
+        finally {
+            subLoader.style.display = "none";
+            isLoadingData = false;
+        }
     }
 
     function backToHomeFeed() {
