@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VELOUR PLATINUM - Crimson Premium</title>
     
-    <!-- Adsterra Popunder Code -->
     <script src="https://pl30149725.effectivecpmnetwork.com/72/36/71/723671d6fb365692e8aae17ed2085563.js"></script>
 
-    <!-- Adsterra Social Bar Code -->
     <script src="https://pl30149726.effectivecpmnetwork.com/22/3d/45/223d45507315c360b0744fa53a9dbbfc.js"></script>
 
     <style>
         :root {
-            /* 1000016966.jpg ပါ Crimson Noir Palette အတိုင်း အရောင်များ သတ်မှတ်ခြင်း */
+            /* Crimson Noir Palette */
             --bg-dark-noir: #02060e;
             --accent-crimson: #c50337;
             --accent-crimson-glow: rgba(197, 3, 55, 0.4);
@@ -41,20 +39,19 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* App Wrapper - Mobile View Form Factor ဟန်အတိုင်း Container ညှိခြင်း */
+        /* App Wrapper - Mobile View Form Factor */
         .app-container {
             width: 100%;
-            max-width: 500px; /* Mobile UI စစ်စစ် ခံစားချက်ရစေရန် */
+            max-width: 500px;
             background-color: var(--bg-dark-noir);
             min-height: 100vh;
             position: relative;
-            padding-bottom: 100px; /* Floating Bar ဖုန်းမကွယ်စေရန် */
             box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
             border-left: 1px solid rgba(197, 3, 55, 0.1);
             border-right: 1px solid rgba(197, 3, 55, 0.1);
         }
 
-        /* Top Header Area - 1000016965.jpg အတိုင်း */
+        /* Top Header Area */
         header {
             background-color: #030710;
             padding: 15px;
@@ -154,7 +151,7 @@
         .slide-info h3 span { color: var(--accent-crimson); }
         .slide-info p { font-size: 11px; color: #d0d4e0; line-height: 1.4; }
 
-        /* VIP Premium Box - 1000016965.jpg UI တူဖြစ်စေရန် */
+        /* VIP Premium Box */
         .vip-promo-card {
             margin: 15px;
             background: linear-gradient(135deg, #091326 0%, #030814 100%);
@@ -203,9 +200,11 @@
             cursor: pointer;
             white-space: nowrap;
             box-shadow: 0 3px 10px rgba(255, 85, 0, 0.3);
+            text-decoration: none;
+            display: inline-block;
         }
 
-        /* Category Filter Pills Layout - 1000016965.jpg အတိုင်း */
+        /* Category Filter Pills Layout */
         .category-scroll-bar {
             display: flex;
             gap: 8px;
@@ -347,27 +346,6 @@
             justify-content: space-between;
         }
 
-        /* Pagination Load More */
-        .pagination-container {
-            text-align: center;
-            margin: 25px 0;
-        }
-        .load-more-action-btn {
-            background-color: #0b111e;
-            color: var(--accent-crimson);
-            border: 1px solid var(--accent-crimson);
-            padding: 10px 30px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .load-more-action-btn:hover {
-            background-color: var(--accent-crimson);
-            color: #fff;
-        }
-
         /* Video Stream Cinema View Panel */
         .cinema-theater-panel {
             display: none;
@@ -392,72 +370,6 @@
             font-weight: bold;
             margin: 15px 0 6px 0;
             line-height: 1.4;
-        }
-
-        /* Floating App Invite Bar - 1000016965.jpg အောက်ခြေဘားအတိုင်း တိတိကျကျ */
-        .floating-app-download-bar {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 500px;
-            background-color: rgba(3, 8, 19, 0.96);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(197, 3, 55, 0.3);
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 999;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.6);
-        }
-        .app-bar-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .app-icon-box {
-            width: 42px;
-            height: 42px;
-            background: linear-gradient(135deg, #0099ff 0%, #0055ff 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            box-shadow: 0 0 10px rgba(0, 153, 255, 0.4);
-        }
-        .app-meta-text h4 {
-            font-size: 13px;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 2px;
-        }
-        .app-meta-text p {
-            font-size: 10px;
-            color: var(--text-muted);
-        }
-        .app-download-trigger-btn {
-            background: linear-gradient(135deg, #00bfff 0%, #0077ff 100%);
-            color: #fff;
-            border: none;
-            padding: 8px 16px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .close-app-bar-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            font-size: 16px;
-            cursor: pointer;
-            margin-left: 8px;
         }
 
         /* Age Verification Screen */
@@ -488,7 +400,7 @@
         .guard-yes { background: var(--accent-crimson); color: #fff; box-shadow: 0 0 10px var(--accent-crimson-glow); }
         .guard-no { background: #161d2c; color: var(--text-muted); }
 
-        .spinning-wheel-loader { display: block; margin: 30px auto; border: 3px solid #0b101d; border-top: 3px solid var(--accent-crimson); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        .spinning-wheel-loader { display: block; margin: 20px auto; border: 3px solid #0b101d; border-top: 3px solid var(--accent-crimson); border-radius: 50%; width: 35px; height: 35px; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .error-log-msg { text-align: center; color: var(--text-muted); padding: 30px; font-size: 13px; grid-column: 1/-1; }
     </style>
@@ -497,7 +409,6 @@
 
 <div class="app-container">
 
-    <!-- 18+ Gate Security -->
     <div class="guard-overlay-gate" id="ageGate">
         <div class="guard-panel-box">
             <div style="font-size: 50px; margin-bottom: 15px;">🔞</div>
@@ -510,7 +421,6 @@
         </div>
     </div>
 
-    <!-- Sticky Native Header Setup -->
     <header>
         <div class="header-logo-row">
             <h2>VELOUR <span>CRIMSON</span></h2>
@@ -522,10 +432,8 @@
         </div>
     </header>
 
-    <!-- Content Center Shell -->
     <div id="homeMainModule">
         
-        <!-- Automated Moving Showcase Slider Component -->
         <div class="showcase-slider">
             <div class="slide-frame active" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1525&auto=format&fit=crop');">
                 <div class="slide-info">
@@ -541,7 +449,6 @@
             </div>
         </div>
 
-        <!-- Native Replica VIP Card - 1000016965.jpg အတိုင်း -->
         <div class="vip-promo-card">
             <div class="vip-left">
                 <div class="vip-icon-badge">👑</div>
@@ -549,10 +456,9 @@
                     မြန်မာချောင်းရိုက် // ကလေး အောကား // ဆယ်ကျော်သက် အောကား // local leak စုံလင်စွာ တစ်နေရာတည်းမှာ အစုံအလင် ကြည့်ရှုဖို့ <strong>20000ks</strong> ထဲဖြင့် VIP ဝင်နိုင်ပါပြီ
                 </div>
             </div>
-            <button class="vip-action-btn" onclick="alert('VIP စနစ်သို့ ဆက်သွယ်ရန် Telegram သို့ လမ်းညွှန်ပေးပါမည်။')">VIP ဝယ်မည်</button>
+            <a href="https://t.me/yoyolayvip_bot" target="_blank" class="vip-action-btn">VIP ဝယ်မည်</a>
         </div>
 
-        <!-- Pill Category List Selection Track - 1000016965.jpg အတိုင်း -->
         <div class="category-scroll-bar">
             <div class="pill-item active" onclick="switchCategoryFilter(this, 'myanmar')">ALL</div>
             <div class="pill-item" onclick="switchCategoryFilter(this, 'myanmar')">MYANMAR</div>
@@ -563,17 +469,11 @@
 
         <h3 class="feed-section-title" id="feedTitleLabel">နောက်ဆုံးရ ကားများ</h3>
         
-        <div class="spinning-wheel-loader" id="gridNetworkLoader"></div>
-        
-        <!-- Native 2 Column Render Target Block -->
         <div class="video-thumbnail-grid" id="mainVideoAppendGrid"></div>
 
-        <div class="pagination-container" id="pagerBtnContainer" style="display:none;">
-            <button class="load-more-action-btn" onclick="fetchNextPageBatch()">နောက်ထပ်ကြည့်မည် 🔄</button>
-        </div>
+        <div class="spinning-wheel-loader" id="gridNetworkLoader" style="display:none;"></div>
     </div>
 
-    <!-- Media Player Workspace Overlay Layout -->
     <div class="cinema-theater-panel" id="theaterModuleBox">
         <div class="video-player-frame-box">
             <iframe id="embedVideoFrame" src="" allowfullscreen></iframe>
@@ -585,23 +485,6 @@
         <div class="video-thumbnail-grid" id="recommendationAppendGrid"></div>
     </div>
 
-    <!-- Native App Install Floating Sticky Bar - 1000016965.jpg အတိုင်း တိတိကျကျ -->
-    <div class="floating-app-download-bar" id="appDownloadFloatingBar">
-        <div class="app-bar-left">
-            <div class="app-icon-box">📱</div>
-            <div class="app-meta-text">
-                <h4>Burmma App</h4>
-                <p>ဒေါင်းလုဒ်ဆွဲပါ Android APK ကို တိုက်ရိုက် Install လုပ်နိုင်သည်</p>
-            </div>
-        </div>
-        <div style="display:flex; align-items:center;">
-            <button class="app-download-trigger-btn" onclick="alert('အက်ပ်ဒေါင်းလုဒ်လင့်ခ်သို့ လမ်းညွှန်ပေးနေပါသည်...');">
-                📥 ထည့်မည်
-            </button>
-            <button class="close-app-bar-btn" onclick="dismissAppPromoBar()">×</button>
-        </div>
-    </div>
-
 </div>
 
 <script>
@@ -609,14 +492,18 @@
     let searchFilterQuery = 'myanmar';
     let currentFeedPage = 1;
     let fallbackPageNum = 1;
+    let isLoadingData = false; // ဒေတာတွေ ထပ်ခါထပ်ခါ မခေါ်အောင် Lock ချရန်
+    let isInTheaterMode = false; // Player အခြေအနေမှာ အောက်ဆွဲရင် Main Feed ဒေတာထပ်မတိုးစေရန်
 
     // Automatic Showcase Slider Logic
     let pointerSlideIdx = 0;
     const arraySlides = document.querySelectorAll('.slide-frame');
     setInterval(() => {
-        arraySlides[pointerSlideIdx].classList.remove('active');
-        pointerSlideIdx = (pointerSlideIdx + 1) % arraySlides.length;
-        arraySlides[pointerSlideIdx].classList.add('active');
+        if(arraySlides.length > 0) {
+            arraySlides[pointerSlideIdx].classList.remove('active');
+            pointerSlideIdx = (pointerSlideIdx + 1) % arraySlides.length;
+            arraySlides[pointerSlideIdx].classList.add('active');
+        }
     }, 5000);
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -636,10 +523,6 @@
         window.location.href = "https://www.google.com";
     }
 
-    function dismissAppPromoBar() {
-        document.getElementById("appDownloadFloatingBar").style.display = "none";
-    }
-
     function randomizeDataOrder(sourceArray) {
         for (let i = sourceArray.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -654,12 +537,13 @@
     }
 
     async function executeDataFetchRequest(query, page, isAppend) {
+        if (isLoadingData) return;
+        isLoadingData = true;
+
         const loader = document.getElementById("gridNetworkLoader");
         const grid = document.getElementById("mainVideoAppendGrid");
-        const pager = document.getElementById("pagerBtnContainer");
 
         loader.style.display = "block";
-        pager.style.display = "none";
         if(!isAppend) grid.innerHTML = "";
 
         const formattedUrl = `${API_ENDPOINT_URL}?query=${encodeURIComponent(query)}&per_page=16&page=${page}&thumbsize=big`;
@@ -671,7 +555,6 @@
             if (data && data.videos && data.videos.length > 0) {
                 const shuffledSet = randomizeDataOrder(data.videos);
                 renderVideoThumbnails(shuffledSet, grid);
-                pager.style.display = "block";
             } else {
                 if(!isAppend) grid.innerHTML = `<div class="error-log-msg">ဗီဒီယိုများ ရှာမတွေ့ပါ။ အခြား စကားလုံးဖြင့် ပြန်ရှာကြည့်ပါ။</div>`;
             }
@@ -680,6 +563,7 @@
             if(!isAppend) grid.innerHTML = `<div class="error-log-msg">လိုင်းချိတ်ဆက်မှု အဆင်မပြေပါ။ VPN ဖွင့်ထားရန် လိုအပ်ပါသည်။</div>`;
         } finally {
             loader.style.display = "none";
+            isLoadingData = false;
         }
     }
 
@@ -714,13 +598,21 @@
         });
     }
 
-    function fetchNextPageBatch() {
-        currentFeedPage++;
-        executeDataFetchRequest(searchFilterQuery, currentFeedPage, true);
-    }
+    // Infinite Scroll Implementation (အောက်ဆွဲရင် အလိုအလျောက် ပေါ်လာစေမည့် စနစ်)
+    window.onscroll = function() {
+        if (isInTheaterMode) return; // Player ဖွင့်ထားရင် Infinite Scroll ခေတ္တရပ်မယ်
+        
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 600) {
+            if(!isLoadingData) {
+                currentFeedPage++;
+                executeDataFetchRequest(searchFilterQuery, currentFeedPage, true);
+            }
+        }
+    };
 
     function launchTheaterMode(url, title, views) {
         window.scrollTo({top: 0, behavior: 'smooth'});
+        isInTheaterMode = true;
         document.getElementById("homeMainModule").style.display = "none";
         document.getElementById("theaterModuleBox").style.display = "block";
 
@@ -747,6 +639,7 @@
     }
 
     function backToHomeFeed() {
+        isInTheaterMode = false;
         document.getElementById("embedVideoFrame").src = "";
         document.getElementById("theaterModuleBox").style.display = "none";
         document.getElementById("homeMainModule").style.display = "block";
@@ -759,6 +652,7 @@
     function startTextSearch() {
         const inputVal = document.getElementById("querySearchField").value.trim();
         if(inputVal !== "") {
+            isInTheaterMode = false;
             document.getElementById("embedVideoFrame").src = "";
             document.getElementById("theaterModuleBox").style.display = "none";
             document.getElementById("homeMainModule").style.display = "block";
@@ -774,6 +668,7 @@
         document.querySelectorAll('.pill-item').forEach(p => p.classList.remove('active'));
         element.classList.add('active');
 
+        isInTheaterMode = false;
         document.getElementById("embedVideoFrame").src = "";
         document.getElementById("theaterModuleBox").style.display = "none";
         document.getElementById("homeMainModule").style.display = "block";
