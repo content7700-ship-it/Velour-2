@@ -3,495 +3,785 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VELOUR PLATINUM - Premium Entertainment</title>
+    <title>VELOUR PLATINUM - Crimson Premium</title>
     
+    <!-- Adsterra Popunder Code -->
     <script src="https://pl30149725.effectivecpmnetwork.com/72/36/71/723671d6fb365692e8aae17ed2085563.js"></script>
 
+    <!-- Adsterra Social Bar Code -->
     <script src="https://pl30149726.effectivecpmnetwork.com/22/3d/45/223d45507315c360b0744fa53a9dbbfc.js"></script>
 
     <style>
         :root {
-            --bg-sidebar: #0a0b0e;
-            --bg-card: rgba(20, 22, 28, 0.9);
-            --accent-gold: #ffcc00; /* တောက်ပသော ရွှေဝါရောင်စစ်စစ် */
-            --accent-gold-hover: #fff066;
-            --text-white: #ffffff;
-            --text-gray: #b3b7c2;
+            /* 1000016966.jpg ပါ Crimson Noir Palette အတိုင်း အရောင်များ သတ်မှတ်ခြင်း */
+            --bg-dark-noir: #02060e;
+            --accent-crimson: #c50337;
+            --accent-crimson-glow: rgba(197, 3, 55, 0.4);
+            --card-gradient: linear-gradient(135deg, #100813 0%, #030710 100%);
+            --text-light: #ffffff;
+            --text-muted: #a0a5b5;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
         
-        /* Same Run Color Web Background Effect */
+        /* Web Background - Crimson Noir Ambient Theme */
         body { 
-            background: linear-gradient(125deg, #060709, #12091a, #05101a, #060709);
+            background: linear-gradient(145deg, #02060e, #14030a, #02060e);
             background-size: 400% 400%;
-            animation: webBgRun 15s ease infinite;
-            color: var(--text-white); 
-            font-family: 'Segoe UI', Roboto, sans-serif; 
-            display: flex; 
-            min-height: 100vh; 
-            overflow-x: hidden; 
+            animation: crimsonBgMove 12s ease infinite;
+            color: var(--text-light); 
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
         }
 
-        @keyframes webBgRun {
+        @keyframes crimsonBgMove {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* Left Sidebar Layout */
-        aside { width: 260px; background-color: var(--bg-sidebar); border-right: 1px solid rgba(255, 204, 0, 0.2); display: flex; flex-direction: column; flex-shrink: 0; position: fixed; height: 100vh; z-index: 99; box-shadow: 5px 0 20px rgba(0,0,0,0.5); }
-        .sidebar-brand { padding: 30px 25px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .sidebar-brand h2 { font-size: 22px; font-weight: 900; color: var(--text-white); letter-spacing: 1.5px; text-shadow: 0 0 10px rgba(255, 204, 0, 0.6); }
-        .sidebar-brand h2 span { color: var(--accent-gold); display: block; font-size: 12px; margin-top: 5px; font-weight: bold; letter-spacing: 3px; }
-        
-        .menu-list { list-style: none; padding: 25px 15px; display: flex; flex-direction: column; gap: 8px; }
-        .menu-item { display: flex; align-items: center; gap: 15px; padding: 14px 20px; border-radius: 8px; color: var(--text-gray); text-decoration: none; font-size: 14px; font-weight: 700; transition: 0.3s; cursor: pointer; }
-        .menu-item:hover, .menu-item.active { background: linear-gradient(90deg, rgba(255, 204, 0, 0.2) 0%, rgba(0,0,0,0) 100%); color: var(--accent-gold); border-left: 4px solid var(--accent-gold); text-shadow: 0 0 8px rgba(255, 204, 0, 0.5); }
-        .menu-item i { font-size: 18px; }
-
-        /* Main Content Window */
-        main { margin-left: 260px; flex-grow: 1; padding-bottom: 60px; min-width: 0; }
-
-        /* Top Header */
-        header { background-color: rgba(10, 11, 14, 0.9); backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 98; padding: 20px 4%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 204, 0, 0.15); }
-        .search-container { position: relative; width: 400px; max-width: 100%; }
-        .search-container input { width: 100%; background-color: #151821; border: 2px solid rgba(255, 204, 0, 0.3); border-radius: 25px; padding: 12px 25px 12px 45px; color: var(--text-white); font-size: 14px; transition: 0.3s; font-weight: 600; }
-        .search-container input:focus { outline: none; border-color: var(--accent-gold); background-color: #1c202c; box-shadow: 0 0 15px rgba(255, 204, 0, 0.5); }
-        .search-container .search-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--accent-gold); font-size: 15px; }
-
-        .nav-buttons { display: flex; gap: 15px; align-items: center; }
-        .btn-premium { background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%); color: #000; border: none; padding: 11px 24px; font-size: 13px; font-weight: 800; border-radius: 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 0 15px rgba(255, 204, 0, 0.4); transition: 0.3s; }
-        .btn-premium:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 204, 0, 0.7); }
-
-        /* Premium Auto Slider Container */
-        .slider-container { margin: 30px 4%; height: 350px; border-radius: 16px; border: 2px solid var(--accent-gold); position: relative; overflow: hidden; box-shadow: 0 0 30px rgba(255, 204, 0, 0.2); }
-        .slide-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; }
-        .slide-item.active { opacity: 1; }
-        .slide-item::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.1), rgba(6, 7, 9, 0.95)); z-index: 1; }
-        
-        .slide-content { position: relative; z-index: 2; max-width: 700px; }
-        .slide-content h1 { font-size: 42px; font-weight: 900; letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase; color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.4); }
-        .slide-content h1 span { color: var(--accent-gold); text-shadow: 0 0 15px rgba(255, 204, 0, 0.8); }
-        .slide-content p { color: #ffffff; font-size: 16px; margin-bottom: 20px; line-height: 1.6; text-shadow: 0 2px 10px rgba(0,0,0,0.9); font-weight: 600; }
-
-        /* Slider Dots */
-        .slider-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 10px; }
-        .dot { width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255,255,255,0.4); cursor: pointer; transition: 0.3s; }
-        .dot.active { background-color: var(--accent-gold); width: 30px; border-radius: 6px; box-shadow: 0 0 10px var(--accent-gold); }
-
-        /* Section Container */
-        .content-section { padding: 20px 4%; }
-        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-        .section-title { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; border-left: 4px solid var(--accent-gold); padding-left: 12px; text-shadow: 0 0 10px rgba(255, 204, 0, 0.4); }
-
-        /* Video Premium Grid */
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-        
-        /* Neon Rainbow Border Running Color Box (Frame Fix) */
-        .video-card { 
-            background-color: var(--bg-card); 
-            border-radius: 12px; 
-            overflow: hidden; 
-            transition: 0.4s ease; 
-            display: flex; 
-            flex-direction: column; 
-            cursor: pointer; 
-            position: relative; 
-            padding: 3px; /* Frame Border အပတ်ပြေးဖို့ နေရာချန်ခြင်း */
-            background: linear-gradient(0deg, #ff0055, #00ff66, #00ffff, #ffcc00, #ff0055);
-            background-size: 400% 400%;
-            animation: frameRunColor 6s linear infinite; /* Frame Border Running Animation */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        /* App Wrapper - Mobile View Form Factor ဟန်အတိုင်း Container ညှိခြင်း */
+        .app-container {
+            width: 100%;
+            max-width: 500px; /* Mobile UI စစ်စစ် ခံစားချက်ရစေရန် */
+            background-color: var(--bg-dark-noir);
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 100px; /* Floating Bar ဖုန်းမကွယ်စေရန် */
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            border-left: 1px solid rgba(197, 3, 55, 0.1);
+            border-right: 1px solid rgba(197, 3, 55, 0.1);
         }
 
-        @keyframes frameRunColor {
+        /* Top Header Area - 1000016965.jpg အတိုင်း */
+        header {
+            background-color: #030710;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(197, 3, 55, 0.2);
+        }
+        .header-logo-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .header-logo-row h2 {
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: var(--text-light);
+        }
+        .header-logo-row h2 span {
+            color: var(--accent-crimson);
+            text-shadow: 0 0 10px var(--accent-crimson-glow);
+        }
+        .home-hub-btn {
+            background: transparent;
+            border: 1px solid var(--accent-crimson);
+            color: var(--text-light);
+            padding: 5px 12px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-box-wrap {
+            position: relative;
+            width: 100%;
+        }
+        .search-box-wrap input {
+            width: 100%;
+            background-color: #0b101d;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            padding: 10px 15px 10px 40px;
+            color: #fff;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+        .search-box-wrap input:focus {
+            outline: none;
+            border-color: var(--accent-crimson);
+            box-shadow: 0 0 10px var(--accent-crimson-glow);
+        }
+        .search-box-wrap .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Auto Showcase Banner Section */
+        .showcase-slider {
+            margin: 15px;
+            height: 140px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid rgba(197, 3, 55, 0.2);
+        }
+        .slide-frame {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+        .slide-frame.active { opacity: 1; }
+        .slide-frame::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, rgba(2,6,14,0.95) 40%, rgba(2,6,14,0.4));
+            z-index: 1;
+        }
+        .slide-info { position: relative; z-index: 2; max-width: 80%; }
+        .slide-info h3 { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+        .slide-info h3 span { color: var(--accent-crimson); }
+        .slide-info p { font-size: 11px; color: #d0d4e0; line-height: 1.4; }
+
+        /* VIP Premium Box - 1000016965.jpg UI တူဖြစ်စေရန် */
+        .vip-promo-card {
+            margin: 15px;
+            background: linear-gradient(135deg, #091326 0%, #030814 100%);
+            border: 1px solid rgba(197, 3, 55, 0.3);
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+        .vip-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .vip-icon-badge {
+            width: 46px;
+            height: 46px;
+            background-color: #121d33;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            border: 1px solid var(--accent-crimson);
+            box-shadow: 0 0 10px var(--accent-crimson-glow);
+        }
+        .vip-text-details {
+            font-size: 11px;
+            color: #d2d6e6;
+            line-height: 1.5;
+        }
+        .vip-text-details strong {
+            color: #ffcc00;
+        }
+        .vip-action-btn {
+            background: linear-gradient(135deg, #ff9900 0%, #ff5500 100%);
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            font-size: 12px;
+            font-weight: 800;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+            box-shadow: 0 3px 10px rgba(255, 85, 0, 0.3);
+        }
+
+        /* Category Filter Pills Layout - 1000016965.jpg အတိုင်း */
+        .category-scroll-bar {
+            display: flex;
+            gap: 8px;
+            padding: 5px 15px 15px 15px;
+            overflow-x: auto;
+        }
+        .category-scroll-bar::-webkit-scrollbar { display: none; }
+        .pill-item {
+            background-color: #0b111e;
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #b0b5c4;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            text-transform: uppercase;
+            transition: 0.2s;
+        }
+        .pill-item.active {
+            background: var(--accent-crimson);
+            border-color: var(--accent-crimson);
+            color: #fff;
+            box-shadow: 0 0 10px var(--accent-crimson-glow);
+        }
+
+        /* Grid Display Titles */
+        .feed-section-title {
+            padding: 5px 15px 15px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .feed-section-title::before {
+            content: '';
+            width: 4px;
+            height: 16px;
+            background-color: var(--accent-crimson);
+            display: inline-block;
+            border-radius: 2px;
+        }
+
+        /* Native 2-Column Video Grid Layout */
+        .video-thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            padding: 0 15px;
+        }
+
+        /* Video Card Custom UI with Run color border */
+        .video-card-element {
+            background-color: #090e17;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+            padding: 2px;
+            background: linear-gradient(0deg, #c50337, #20040c, #c50337);
+            background-size: 400% 400%;
+            animation: crimsonBorderRun 6s linear infinite;
+        }
+        @keyframes crimsonBorderRun {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
-        .video-card:hover { 
-            transform: translateY(-10px); 
-            animation: frameRunColor 2s linear infinite; /* Hover လုပ်လျှင် ပိုမြန်မြန်လည်မည် */
-            box-shadow: 0 15px 30px rgba(255, 204, 0, 0.3);
+        .card-internal-space {
+            background: #050910;
+            border-radius: 8px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
         }
-        
-        /* ကတ်အတွင်းပိုင်း Background ကို ကာကွယ်ရန် */
-        .card-inner { background: #13161c; border-radius: 10px; height: 100%; display: flex; flex-direction: column; overflow: hidden; }
-        
-        .thumb-box { position: relative; width: 100%; padding-top: 56.25%; background-color: #000; overflow: hidden; }
-        .thumb-box img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
-        .video-card:hover .thumb-box img { transform: scale(1.08); }
-        .badge-duration { position: absolute; bottom: 10px; right: 10px; background-color: #000; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 800; color: var(--accent-gold); border: 1px solid var(--accent-gold); box-shadow: 0 0 8px var(--accent-gold); }
-        
-        .video-meta-info { padding: 18px; display: flex; flex-direction: column; flex-grow: 1; }
-        .video-title { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 12px; height: 45px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; color: #ffffff; }
-        .video-stats { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-gray); margin-top: auto; font-weight: 600; }
-        .stars { color: var(--accent-gold); font-size: 12px; text-shadow: 0 0 5px var(--accent-gold); }
 
-        /* Infinite Load More Styling */
-        .center-btn-box { text-align: center; margin: 40px 0; }
-        .btn-luxury-load { background: linear-gradient(135deg, #ffcc00 0%, #ff3300 100%); color: #000; border: none; padding: 14px 45px; font-size: 14px; font-weight: 800; border-radius: 30px; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 0 15px rgba(255, 51, 0, 0.4); }
-        .btn-luxury-load:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 204, 0, 0.8); }
+        .media-thumbnail-box {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            background-color: #000;
+        }
+        .media-thumbnail-box img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+        }
+        .native-country-tag {
+            position: absolute;
+            top: 6px; left: 6px;
+            background-color: rgba(2, 6, 14, 0.85);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .media-runtime-badge {
+            position: absolute;
+            bottom: 6px; right: 6px;
+            background-color: rgba(0,0,0,0.8);
+            color: var(--accent-crimson);
+            font-size: 9px;
+            font-weight: bold;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
 
-        /* Video Streaming Page View */
-        .streaming-container { display: none; grid-template-columns: 2.4fr 1fr; gap: 35px; padding: 20px 4%; margin-top: 10px; }
-        .player-left-panel { width: 100%; }
-        
-        /* Cinema Streaming Border Running Effect */
-        .cinema-wrapper { 
-            width: 100%; 
-            aspect-ratio: 16/9; 
-            background: #000; 
-            border-radius: 16px; 
-            overflow: hidden; 
-            padding: 4px;
-            background: linear-gradient(90deg, #00ffff, #ff0055, #00ff66, #ffcc00, #00ffff);
+        .media-details-container {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .media-title-text {
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #eaeefc;
+            height: 34px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 8px;
+        }
+        .media-views-row {
+            font-size: 10px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Pagination Load More */
+        .pagination-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .load-more-action-btn {
+            background-color: #0b111e;
+            color: var(--accent-crimson);
+            border: 1px solid var(--accent-crimson);
+            padding: 10px 30px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .load-more-action-btn:hover {
+            background-color: var(--accent-crimson);
+            color: #fff;
+        }
+
+        /* Video Stream Cinema View Panel */
+        .cinema-theater-panel {
+            display: none;
+            padding: 15px;
+        }
+        .video-player-frame-box {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 2px;
+            background: linear-gradient(90deg, #c50337, #02060e, #c50337);
             background-size: 400% 400%;
-            animation: frameRunColor 8s linear infinite;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.8); 
+            animation: crimsonBorderRun 4s linear infinite;
         }
-        .cinema-wrapper iframe { width: 100%; height: 100%; border: none; border-radius: 12px; }
-        .cinema-title { font-size: 26px; font-weight: 800; margin: 25px 0 12px 0; color: #fff; line-height: 1.4; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        
-        .sidebar-right-panel { display: flex; flex-direction: column; gap: 20px; }
+        .video-player-frame-box iframe {
+            width: 100%; height: 100%; border: none; border-radius: 10px;
+        }
+        .cinema-meta-heading {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 15px 0 6px 0;
+            line-height: 1.4;
+        }
 
-        /* Age Verification Overlay */
-        .gate-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(4, 5, 7, 0.99); display: flex; align-items: center; justify-content: center; z-index: 99999; backdrop-filter: blur(15px); padding: 20px; }
-        .gate-modal { background-color: var(--bg-sidebar); border: 2px solid var(--accent-gold); border-radius: 20px; max-width: 520px; width: 100%; padding: 45px 35px; text-align: center; box-shadow: 0 0 35px rgba(255, 204, 0, 0.3); }
-        .gate-icon { font-size: 60px; margin-bottom: 20px; color: var(--accent-gold); text-shadow: 0 0 15px var(--accent-gold); }
-        .gate-modal h2 { font-size: 26px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; color: #fff; }
-        .gate-modal p { color: var(--text-gray); font-size: 15px; line-height: 1.6; margin-bottom: 35px; font-weight: 600; }
-        .gate-actions { display: flex; gap: 15px; justify-content: center; }
-        .gate-btn { padding: 14px 35px; font-size: 14px; font-weight: 800; border-radius: 30px; cursor: pointer; min-width: 140px; text-transform: uppercase; transition: 0.3s; }
-        .gate-confirm { background: linear-gradient(135deg, #ffcc00 0%, #ff6600 100%); color: #000; border: none; box-shadow: 0 0 15px rgba(255, 204, 0, 0.5); }
-        .gate-confirm:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 204, 0, 0.8); }
-        .gate-cancel { background-color: transparent; color: var(--text-gray); border: 2px solid rgba(255,255,255,0.1); }
-        
-        .spinning-loader { display: block; margin: 50px auto; border: 4px solid #151821; border-top: 4px solid var(--accent-gold); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; }
+        /* Floating App Invite Bar - 1000016965.jpg အောက်ခြေဘားအတိုင်း တိတိကျကျ */
+        .floating-app-download-bar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 500px;
+            background-color: rgba(3, 8, 19, 0.96);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(197, 3, 55, 0.3);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 999;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.6);
+        }
+        .app-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .app-icon-box {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #0099ff 0%, #0055ff 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 0 10px rgba(0, 153, 255, 0.4);
+        }
+        .app-meta-text h4 {
+            font-size: 13px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+        .app-meta-text p {
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+        .app-download-trigger-btn {
+            background: linear-gradient(135deg, #00bfff 0%, #0077ff 100%);
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .close-app-bar-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+
+        /* Age Verification Screen */
+        .guard-overlay-gate {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(2, 6, 14, 0.99);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            padding: 20px;
+        }
+        .guard-panel-box {
+            background-color: #080f1d;
+            border: 1px solid var(--accent-crimson);
+            border-radius: 16px;
+            max-width: 400px;
+            width: 100%;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 0 30px var(--accent-crimson-glow);
+        }
+        .guard-panel-box h2 { font-size: 22px; margin-bottom: 12px; text-transform: uppercase; }
+        .guard-panel-box p { color: var(--text-muted); font-size: 13px; line-height: 1.5; margin-bottom: 25px; }
+        .guard-action-buttons { display: flex; gap: 12px; justify-content: center; }
+        .guard-btn { padding: 12px 25px; font-size: 13px; font-weight: bold; border-radius: 20px; cursor: pointer; min-width: 110px; border: none; }
+        .guard-yes { background: var(--accent-crimson); color: #fff; box-shadow: 0 0 10px var(--accent-crimson-glow); }
+        .guard-no { background: #161d2c; color: var(--text-muted); }
+
+        .spinning-wheel-loader { display: block; margin: 30px auto; border: 3px solid #0b101d; border-top: 3px solid var(--accent-crimson); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .error-log { text-align: center; color: var(--accent-gold); padding: 50px; grid-column: 1 / -1; font-size: 16px; font-weight: bold; }
-
-        /* Responsive Layout fixes */
-        @media (max-width: 1024px) {
-            aside { width: 80px; }
-            aside .sidebar-brand h2, aside .menu-item span { display: none; }
-            main { margin-left: 80px; }
-            .sidebar-brand { padding: 20px 10px; }
-            .menu-item { justify-content: center; padding: 15px; }
-            .streaming-container { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 600px) {
-            aside { display: none; }
-            main { margin-left: 0; }
-            header { padding: 15px 5%; }
-            .search-container { width: 180px; }
-            .btn-premium { padding: 8px 14px; font-size: 11px; }
-            .slide-content h1 { font-size: 28px; }
-            .slider-container { height: 280px; }
-        }
+        .error-log-msg { text-align: center; color: var(--text-muted); padding: 30px; font-size: 13px; grid-column: 1/-1; }
     </style>
 </head>
 <body>
 
-<div class="gate-overlay" id="ageGate">
-    <div class="gate-modal">
-        <div class="gate-icon">🔞</div>
-        <h2>Velour Platinum Premium</h2>
-        <p>This network contains hyper-exclusive adult content. You must be 18 years of age or older and agree to our terms of privacy to grant access.</p>
-        <div class="gate-actions">
-            <button class="gate-btn gate-confirm" onclick="unlockAccess()">Access Network</button>
-            <button class="gate-btn gate-cancel" onclick="denyAccess()">Exit</button>
+<div class="app-container">
+
+    <!-- 18+ Gate Security -->
+    <div class="guard-overlay-gate" id="ageGate">
+        <div class="guard-panel-box">
+            <div style="font-size: 50px; margin-bottom: 15px;">🔞</div>
+            <h2>Velour Crimson</h2>
+            <p>ဤဝဘ်ဆိုက်တွင် အသက် ၁၈ နှစ်ပြည့်ပြီးသူများသာ ကြည့်ရှုသင့်သည့် အကြောင်းအရာများ ပါဝင်သည်။ သင်သည် အသက် ၁၈ နှစ် ပြည့်ပြီးပြီလား။</p>
+            <div class="guard-action-buttons">
+                <button class="guard-btn guard-yes" onclick="grantVerification()">ပြည့်ပါပြီ</button>
+                <button class="guard-btn guard-no" onclick="exitToSafety()">မပြည့်သေးပါ</button>
+            </div>
         </div>
     </div>
-</div>
 
-<aside>
-    <div class="sidebar-brand">
-        <h2>VELOUR<span>PLATINUM</span></h2>
-    </div>
-    <ul class="menu-list">
-        <li class="menu-item active" onclick="goHomeLayout()"><i class="icon">✨</i> <span>Exclusive Series</span></li>
-        <li class="menu-item" onclick="triggerSearchCategory('asian')"><i class="icon">🌏</i> <span>Asian Premium</span></li>
-        <li class="menu-item" onclick="triggerSearchCategory('romance')"><i class="icon">💖</i> <span>Cinematic Shorts</span></li>
-        <li class="menu-item" onclick="triggerSearchCategory('cosplay')"><i class="icon">🎭</i> <span>Creators Content</span></li>
-        <li class="menu-item" onclick="triggerSearchCategory('amateur')"><i class="icon">📸</i> <span>Amateur Diary</span></li>
-    </ul>
-</aside>
-
-<main>
+    <!-- Sticky Native Header Setup -->
     <header>
-        <div class="search-container">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="querySearch" placeholder="Search premium series..." onkeyup="if(event.key === 'Enter') executeSearch()">
+        <div class="header-logo-row">
+            <h2>VELOUR <span>CRIMSON</span></h2>
+            <button class="home-hub-btn" onclick="backToHomeFeed()">Home Hub</button>
         </div>
-        <div class="nav-buttons">
-            <button class="btn-premium" onclick="goHomeLayout()">Home Hub</button>
+        <div class="search-box-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="querySearchField" placeholder="ရှာဖွေလိုသည်များကို ရိုက်ထည့်ပါ..." onkeyup="if(event.key === 'Enter') startTextSearch()">
         </div>
     </header>
 
-    <div class="spinning-loader" id="mainLoader"></div>
-
-    <div id="homeLayoutBox">
+    <!-- Content Center Shell -->
+    <div id="homeMainModule">
         
-        <div class="slider-container">
-            <div class="slide-item active" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1525&auto=format&fit=crop');">
-                <div class="slide-content">
-                    <h1>VELOUR <span>PLATINUM</span></h1>
-                    <p>Experience ultra-clear cinematic speed streaming. Updates are completely randomized upon every visit to ensure maximum content variety.</p>
+        <!-- Automated Moving Showcase Slider Component -->
+        <div class="showcase-slider">
+            <div class="slide-frame active" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1525&auto=format&fit=crop');">
+                <div class="slide-info">
+                    <h3>VELOUR <span>PREMIUM</span></h3>
+                    <p>အမြန်နှုန်းအမြင့်ဆုံးဆာဗာများဖြင့် ကြည်လင်ပြတ်သားစွာ အပန်းဖြေကြည့်ရှုလိုက်ပါ။</p>
                 </div>
             </div>
-            <div class="slide-item" style="background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1470&auto=format&fit=crop');">
-                <div class="slide-content">
-                    <h1>4K ULTRA <span>NETWORKS</span></h1>
-                    <p>Unlock premium international updates instantly. High privacy protocols enabled. Stable VPN connection recommended for optimal performance.</p>
+            <div class="slide-frame" style="background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1470&auto=format&fit=crop');">
+                <div class="slide-info">
+                    <h3>CRIMSON <span>NOIR</span></h3>
+                    <p>လုံခြုံစိတ်ချရမှုအပြည့်ရှိသော ကွန်ရက်ချိတ်ဆက်မှုစနစ်ဖြင့် ဖန်တီးထားပါသည်။</p>
                 </div>
-            </div>
-            <div class="slide-item" style="background-image: url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1470&auto=format&fit=crop');">
-                <div class="slide-content">
-                    <h1>EXCLUSIVELY <span>RANDOMIZED</span></h1>
-                    <p>Never view the exact same layout twice. Our intelligent script refreshes content sequences on demand for non-stop entertainment.</p>
-                </div>
-            </div>
-            
-            <div class="slider-dots">
-                <div class="dot active" onclick="jumpToSlide(0)"></div>
-                <div class="dot" onclick="jumpToSlide(1)"></div>
-                <div class="dot" onclick="jumpToSlide(2)"></div>
             </div>
         </div>
+
+        <!-- Native Replica VIP Card - 1000016965.jpg အတိုင်း -->
+        <div class="vip-promo-card">
+            <div class="vip-left">
+                <div class="vip-icon-badge">👑</div>
+                <div class="vip-text-details">
+                    မြန်မာချောင်းရိုက် // ကလေး အောကား // ဆယ်ကျော်သက် အောကား // local leak စုံလင်စွာ တစ်နေရာတည်းမှာ အစုံအလင် ကြည့်ရှုဖို့ <strong>20000ks</strong> ထဲဖြင့် VIP ဝင်နိုင်ပါပြီ
+                </div>
+            </div>
+            <button class="vip-action-btn" onclick="alert('VIP စနစ်သို့ ဆက်သွယ်ရန် Telegram သို့ လမ်းညွှန်ပေးပါမည်။')">VIP ဝယ်မည်</button>
+        </div>
+
+        <!-- Pill Category List Selection Track - 1000016965.jpg အတိုင်း -->
+        <div class="category-scroll-bar">
+            <div class="pill-item active" onclick="switchCategoryFilter(this, 'myanmar')">ALL</div>
+            <div class="pill-item" onclick="switchCategoryFilter(this, 'myanmar')">MYANMAR</div>
+            <div class="pill-item" onclick="switchCategoryFilter(this, 'japan')">JAPAN</div>
+            <div class="pill-item" onclick="switchCategoryFilter(this, 'korea')">KOREA</div>
+            <div class="pill-item" onclick="switchCategoryFilter(this, 'asian')">ASIAN</div>
+        </div>
+
+        <h3 class="feed-section-title" id="feedTitleLabel">နောက်ဆုံးရ ကားများ</h3>
         
-        <div class="content-section">
-            <div class="section-header">
-                <h3 class="section-title" id="gridDisplayTitle">Featured Premieres</h3>
-            </div>
-            <div class="video-grid" id="videoLayoutGrid"></div>
-            
-            <div class="center-btn-box" id="paginationBox" style="display: none;">
-                <button class="btn-luxury-load" onclick="extendContentFeed()">Load More Contents 🔄</button>
-            </div>
+        <div class="spinning-wheel-loader" id="gridNetworkLoader"></div>
+        
+        <!-- Native 2 Column Render Target Block -->
+        <div class="video-thumbnail-grid" id="mainVideoAppendGrid"></div>
+
+        <div class="pagination-container" id="pagerBtnContainer" style="display:none;">
+            <button class="load-more-action-btn" onclick="fetchNextPageBatch()">နောက်ထပ်ကြည့်မည် 🔄</button>
         </div>
     </div>
 
-    <div class="streaming-container" id="theaterLayoutBox">
-        <div class="player-left-panel">
-            <div class="cinema-wrapper">
-                <iframe id="theaterFrame" src="" allowfullscreen></iframe>
-            </div>
-            <h2 class="cinema-title" id="theaterTitle">Loading Premium Content Title...</h2>
-            <div style="color: var(--accent-gold); font-size: 15px; margin-bottom: 20px; font-weight: bold;" id="theaterStats">👁️ 0 Views</div>
+    <!-- Media Player Workspace Overlay Layout -->
+    <div class="cinema-theater-panel" id="theaterModuleBox">
+        <div class="video-player-frame-box">
+            <iframe id="embedVideoFrame" src="" allowfullscreen></iframe>
         </div>
+        <h2 class="cinema-meta-heading" id="theaterVideoTitle">Loading Master Series Title...</h2>
+        <div style="font-size: 12px; color: var(--accent-crimson); font-weight: bold; margin-bottom: 25px;" id="theaterVideoViews">👁️ 0 Views</div>
         
-        <div class="sidebar-right-panel">
-            <h3 class="section-title">Recommendations</h3>
-            <div id="theaterSidebarGrid" style="display: flex; flex-direction: column; gap: 20px;"></div>
+        <h3 class="feed-section-title" style="padding-left:0;">ဆက်စပ်ဗီဒီယိုများ</h3>
+        <div class="video-thumbnail-grid" id="recommendationAppendGrid"></div>
+    </div>
+
+    <!-- Native App Install Floating Sticky Bar - 1000016965.jpg အတိုင်း တိတိကျကျ -->
+    <div class="floating-app-download-bar" id="appDownloadFloatingBar">
+        <div class="app-bar-left">
+            <div class="app-icon-box">📱</div>
+            <div class="app-meta-text">
+                <h4>Burmma App</h4>
+                <p>ဒေါင်းလုဒ်ဆွဲပါ Android APK ကို တိုက်ရိုက် Install လုပ်နိုင်သည်</p>
+            </div>
+        </div>
+        <div style="display:flex; align-items:center;">
+            <button class="app-download-trigger-btn" onclick="alert('အက်ပ်ဒေါင်းလုဒ်လင့်ခ်သို့ လမ်းညွှန်ပေးနေပါသည်...');">
+                📥 ထည့်မည်
+            </button>
+            <button class="close-app-bar-btn" onclick="dismissAppPromoBar()">×</button>
         </div>
     </div>
-</main>
+
+</div>
 
 <script>
-    const EPORNER_API_LINK = 'https://www.eporner.com/api/v2/video/search/';
-    let activeKeyword = 'myanmar'; 
-    let masterPageNo = 1;      
-    let sidePageNo = 1;      
-    
-    // Slider Setup Logic
-    let currentSlideIndex = 0;
-    const slides = document.querySelectorAll('.slide-item');
-    const dots = document.querySelectorAll('.dot');
-    let sliderTimer = setInterval(autoAdvanceSlides, 5000);
+    const API_ENDPOINT_URL = 'https://www.eporner.com/api/v2/video/search/';
+    let searchFilterQuery = 'myanmar';
+    let currentFeedPage = 1;
+    let fallbackPageNum = 1;
 
-    function autoAdvanceSlides() {
-        changeSlide((currentSlideIndex + 1) % slides.length);
-    }
-
-    function changeSlide(nextIndex) {
-        slides[currentSlideIndex].classList.remove('active');
-        dots[currentSlideIndex].classList.remove('active');
-        currentSlideIndex = nextIndex;
-        slides[currentSlideIndex].classList.add('active');
-        dots[currentSlideIndex].classList.add('active');
-    }
-
-    function jumpToSlide(index) {
-        clearInterval(sliderTimer);
-        changeSlide(index);
-        sliderTimer = setInterval(autoAdvanceSlides, 5000);
-    }
+    // Automatic Showcase Slider Logic
+    let pointerSlideIdx = 0;
+    const arraySlides = document.querySelectorAll('.slide-frame');
+    setInterval(() => {
+        arraySlides[pointerSlideIdx].classList.remove('active');
+        pointerSlideIdx = (pointerSlideIdx + 1) % arraySlides.length;
+        arraySlides[pointerSlideIdx].classList.add('active');
+    }, 5000);
 
     document.addEventListener("DOMContentLoaded", () => {
-        if (localStorage.getItem("platinum_verified") === "true") {
+        if (localStorage.getItem("gate_pass_token") === "true") {
             document.getElementById("ageGate").style.display = "none";
-            bootNetwork();
+            initializeSystemEngine();
         }
     });
 
-    function unlockAccess() {
-        localStorage.setItem("platinum_verified", "true");
+    function grantVerification() {
+        localStorage.setItem("gate_pass_token", "true");
         document.getElementById("ageGate").style.display = "none";
-        bootNetwork();
+        initializeSystemEngine();
     }
 
-    function denyAccess() {
+    function exitToSafety() {
         window.location.href = "https://www.google.com";
     }
 
-    function mixContentSequence(array) {
-        let currentIndex = array.length, tempValue, randomIdx;
-        while (currentIndex !== 0) {
-            randomIdx = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-            tempValue = array[currentIndex];
-            array[currentIndex] = array[randomIdx];
-            array[randomIdx] = tempValue;
+    function dismissAppPromoBar() {
+        document.getElementById("appDownloadFloatingBar").style.display = "none";
+    }
+
+    function randomizeDataOrder(sourceArray) {
+        for (let i = sourceArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [sourceArray[i], sourceArray[j]] = [sourceArray[j], sourceArray[i]];
         }
-        return array;
+        return sourceArray;
     }
 
-    function bootNetwork() {
-        masterPageNo = Math.floor(Math.random() * 20) + 1; 
-        pullEpornerData(activeKeyword, masterPageNo, false);
+    function initializeSystemEngine() {
+        currentFeedPage = Math.floor(Math.random() * 15) + 1;
+        executeDataFetchRequest(searchFilterQuery, currentFeedPage, false);
     }
 
-    async function pullEpornerData(keyword, page, isAppendMode = false) {
-        const loader = document.getElementById("mainLoader");
-        const layoutGrid = document.getElementById("videoLayoutGrid");
-        const paginationBox = document.getElementById("paginationBox");
-        
+    async function executeDataFetchRequest(query, page, isAppend) {
+        const loader = document.getElementById("gridNetworkLoader");
+        const grid = document.getElementById("mainVideoAppendGrid");
+        const pager = document.getElementById("pagerBtnContainer");
+
         loader.style.display = "block";
-        paginationBox.style.display = "none";
-        if (!isAppendMode) { layoutGrid.innerHTML = ""; }
+        pager.style.display = "none";
+        if(!isAppend) grid.innerHTML = "";
 
-        const cleanUrl = `${EPORNER_API_LINK}?query=${encodeURIComponent(keyword)}&per_page=24&page=${page}&thumbsize=big`;
+        const formattedUrl = `${API_ENDPOINT_URL}?query=${encodeURIComponent(query)}&per_page=16&page=${page}&thumbsize=big`;
 
         try {
-            const reaction = await fetch(cleanUrl);
-            const dataPackage = await reaction.json();
+            const connection = await fetch(formattedUrl);
+            const data = await connection.json();
 
-            if (dataPackage && dataPackage.videos && dataPackage.videos.length > 0) {
-                const fullyMixedVideos = mixContentSequence(dataPackage.videos);
-                injectVideoCards(fullyMixedVideos, layoutGrid);
-                paginationBox.style.display = "block";
+            if (data && data.videos && data.videos.length > 0) {
+                const shuffledSet = randomizeDataOrder(data.videos);
+                renderVideoThumbnails(shuffledSet, grid);
+                pager.style.display = "block";
             } else {
-                if (!isAppendMode) {
-                    layoutGrid.innerHTML = `<div class="error-log">No exclusive content match found. Try a different search term.</div>`;
-                }
+                if(!isAppend) grid.innerHTML = `<div class="error-log-msg">ဗီဒီယိုများ ရှာမတွေ့ပါ။ အခြား စကားလုံးဖြင့် ပြန်ရှာကြည့်ပါ။</div>`;
             }
-        } catch (fail) {
-            console.error("API Fetch Failure Log:", fail);
-            if (!isAppendMode) {
-                layoutGrid.innerHTML = `<div class="error-log">Secure handshake failed. Please ensure your VPN is actively turned on.</div>`;
-            }
+        } catch (err) {
+            console.error(err);
+            if(!isAppend) grid.innerHTML = `<div class="error-log-msg">လိုင်းချိတ်ဆက်မှု အဆင်မပြေပါ။ VPN ဖွင့်ထားရန် လိုအပ်ပါသည်။</div>`;
         } finally {
             loader.style.display = "none";
         }
     }
 
-    function injectVideoCards(videoBlock, targetElement) {
-        videoBlock.forEach(video => {
-            const title = video.title;
-            const previewImg = video.default_thumb ? video.default_thumb.src : '';
-            const timestamp = `${video.length_min || '00'}:${video.length_sec || '00'}`;
-            const clickCount = parseInt(video.views).toLocaleString();
-            const sourceUrl = video.embed || '';
+    function renderVideoThumbnails(videoList, targetContainer) {
+        videoList.forEach(item => {
+            const headline = item.title;
+            const previewPhoto = item.default_thumb ? item.default_thumb.src : '';
+            const duration = `${item.length_min || '00'}:${item.length_sec || '00'}`;
+            const totalHits = parseInt(item.views).toLocaleString();
+            const embedLink = item.embed || '';
 
-            const individualCard = document.createElement('div');
-            individualCard.className = 'video-card';
-            individualCard.innerHTML = `
-                <div class="card-inner">
-                    <div class="thumb-box">
-                        <img src="${previewImg}" alt="Premium Banner" loading="lazy">
-                        <span class="badge-duration">${timestamp}</span>
+            const elementCard = document.createElement('div');
+            elementCard.className = 'video-card-element';
+            elementCard.innerHTML = `
+                <div class="card-internal-space">
+                    <div class="media-thumbnail-box">
+                        <img src="${previewPhoto}" alt="Thumb" loading="lazy">
+                        <div class="native-country-tag">🇲🇲 Premium</div>
+                        <span class="media-runtime-badge">${duration}</span>
                     </div>
-                    <div class="video-meta-info">
-                        <h3 class="video-title">${title}</h3>
-                        <div class="video-stats">
-                            <span>👁️ ${clickCount}</span>
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <div class="media-details-container">
+                        <h4 class="media-title-text">${headline}</h4>
+                        <div class="media-views-row">
+                            <span>👁️ ${totalHits}</span>
+                            <span style="color:#ffcc00">★ 5.0</span>
                         </div>
                     </div>
                 </div>
             `;
-            individualCard.onclick = () => routeToTheaterPage(sourceUrl, title, clickCount);
-            targetElement.appendChild(individualCard);
+            elementCard.onclick = () => launchTheaterMode(embedLink, headline, totalHits);
+            targetContainer.appendChild(elementCard);
         });
     }
 
-    function extendContentFeed() {
-        masterPageNo++;
-        pullEpornerData(activeKeyword, masterPageNo, true);
+    function fetchNextPageBatch() {
+        currentFeedPage++;
+        executeDataFetchRequest(searchFilterQuery, currentFeedPage, true);
     }
 
-    function routeToTheaterPage(iframeSrc, titleText, totalViews) {
+    function launchTheaterMode(url, title, views) {
         window.scrollTo({top: 0, behavior: 'smooth'});
-        document.getElementById("homeLayoutBox").style.display = "none";
-        document.getElementById("theaterLayoutBox").style.display = "grid";
+        document.getElementById("homeMainModule").style.display = "none";
+        document.getElementById("theaterModuleBox").style.display = "block";
 
-        document.getElementById("theaterTitle").innerText = titleText;
-        document.getElementById("theaterStats").innerText = `👁️ ${totalViews} Views / Exclusive Access`;
-        document.getElementById("theaterFrame").src = iframeSrc;
+        document.getElementById("theaterVideoTitle").innerText = title;
+        document.getElementById("theaterVideoViews").innerText = `👁️ ${views} Views / Exclusive Access`;
+        document.getElementById("embedVideoFrame").src = url;
 
-        sidePageNo = Math.floor(Math.random() * 25) + 1;
-        fillTheaterRecommendations();
+        fallbackPageNum = Math.floor(Math.random() * 20) + 1;
+        fetchTheaterSuggestions();
     }
 
-    async function fillTheaterRecommendations() {
-        const sideBox = document.getElementById("theaterSidebarGrid");
-        sideBox.innerHTML = "";
-
-        const cleanUrl = `${EPORNER_API_LINK}?query=${encodeURIComponent(activeKeyword)}&per_page=5&page=${sidePageNo}&thumbsize=big`;
+    async function fetchTheaterSuggestions() {
+        const targetSideGrid = document.getElementById("recommendationAppendGrid");
+        targetSideGrid.innerHTML = "";
         
+        const backupUrl = `${API_ENDPOINT_URL}?query=${encodeURIComponent(searchFilterQuery)}&per_page=4&page=${fallbackPageNum}&thumbsize=big`;
         try {
-            const reaction = await fetch(cleanUrl);
-            const dataPackage = await reaction.json();
-            if (dataPackage && dataPackage.videos && dataPackage.videos.length > 0) {
-                injectVideoCards(mixContentSequence(dataPackage.videos), sideBox);
+            const res = await fetch(backupUrl);
+            const json = await res.json();
+            if(json && json.videos) {
+                renderVideoThumbnails(randomizeDataOrder(json.videos), targetSideGrid);
             }
-        } catch (err) {
-            console.error("Sidebar loading trace warning:", err);
-        }
+        } catch(e) { console.log(e); }
     }
 
-    function goHomeLayout() {
-        document.getElementById("theaterFrame").src = "";
-        document.getElementById("theaterLayoutBox").style.display = "none";
-        document.getElementById("homeLayoutBox").style.display = "block";
-        document.getElementById("querySearch").value = "";
-        document.getElementById("gridDisplayTitle").innerText = "Featured Premieres";
-        activeKeyword = 'myanmar';
-        bootNetwork();
+    function backToHomeFeed() {
+        document.getElementById("embedVideoFrame").src = "";
+        document.getElementById("theaterModuleBox").style.display = "none";
+        document.getElementById("homeMainModule").style.display = "block";
+        document.getElementById("querySearchField").value = "";
+        document.getElementById("feedTitleLabel").innerText = "နောက်ဆုံးရ ကားများ";
+        searchFilterQuery = 'myanmar';
+        initializeSystemEngine();
     }
 
-    function executeSearch() {
-        const keywordInput = document.getElementById("querySearch").value.trim();
-        if (keywordInput !== "") {
-            document.getElementById("theaterFrame").src = "";
-            document.getElementById("theaterLayoutBox").style.display = "none";
-            document.getElementById("homeLayoutBox").style.display = "block";
+    function startTextSearch() {
+        const inputVal = document.getElementById("querySearchField").value.trim();
+        if(inputVal !== "") {
+            document.getElementById("embedVideoFrame").src = "";
+            document.getElementById("theaterModuleBox").style.display = "none";
+            document.getElementById("homeMainModule").style.display = "block";
             
-            document.getElementById("gridDisplayTitle").innerText = `Results for: ${keywordInput}`;
-            activeKeyword = keywordInput;
-            masterPageNo = 1;
-            pullEpornerData(activeKeyword, masterPageNo, false);
+            document.getElementById("feedTitleLabel").innerText = `ရှာဖွေမှုရလဒ် - ${inputVal}`;
+            searchFilterQuery = inputVal;
+            currentFeedPage = 1;
+            executeDataFetchRequest(searchFilterQuery, currentFeedPage, false);
         }
     }
 
-    function triggerSearchCategory(targetCategory) {
-        document.querySelectorAll('.menu-item').forEach(element => {
-            element.classList.remove('active');
-        });
-        event.currentTarget.classList.add('active');
+    function switchCategoryFilter(element, keyword) {
+        document.querySelectorAll('.pill-item').forEach(p => p.classList.remove('active'));
+        element.classList.add('active');
 
-        document.getElementById("theaterFrame").src = "";
-        document.getElementById("theaterLayoutBox").style.display = "none";
-        document.getElementById("homeLayoutBox").style.display = "block";
-        
-        document.getElementById("gridDisplayTitle").innerText = `${targetCategory} Collection`;
-        activeKeyword = targetCategory;
-        masterPageNo = Math.floor(Math.random() * 5) + 1;
-        pullEpornerData(activeKeyword, masterPageNo, false);
+        document.getElementById("embedVideoFrame").src = "";
+        document.getElementById("theaterModuleBox").style.display = "none";
+        document.getElementById("homeMainModule").style.display = "block";
+
+        document.getElementById("feedTitleLabel").innerText = `${keyword.toUpperCase()} ဗီဒီယိုများ`;
+        searchFilterQuery = keyword;
+        currentFeedPage = Math.floor(Math.random() * 6) + 1;
+        executeDataFetchRequest(searchFilterQuery, currentFeedPage, false);
     }
 </script>
 
