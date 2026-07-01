@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VELOUR PLATINUM - Premium Entertainment</title>
     
-    <!-- Adsterra Popunder Code -->
     <script src="https://pl30149725.effectivecpmnetwork.com/72/36/71/723671d6fb365692e8aae17ed2085563.js"></script>
 
-    <!-- Adsterra Social Bar Code -->
     <script src="https://pl30149726.effectivecpmnetwork.com/22/3d/45/223d45507315c360b0744fa53a9dbbfc.js"></script>
 
     <style>
@@ -26,7 +24,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background-color: var(--bg-main); color: var(--text-white); font-family: 'Segoe UI', Roboto, sans-serif; display: flex; min-height: 100vh; overflow-x: hidden; }
 
-        /* Left Sidebar Layout (From Image 1000016960.png) */
+        /* Left Sidebar Layout */
         aside { width: 260px; background-color: var(--bg-sidebar); border-right: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; flex-shrink: 0; position: fixed; height: 100vh; z-index: 99; }
         .sidebar-brand { padding: 30px 25px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.03); }
         .sidebar-brand h2 { font-size: 20px; font-weight: 800; color: var(--text-white); letter-spacing: 1.5px; }
@@ -50,11 +48,21 @@
         .nav-buttons { display: flex; gap: 15px; align-items: center; }
         .btn-premium { background: linear-gradient(135deg, #c5a880 0%, #a3855c 100%); color: #000; border: none; padding: 10px 22px; font-size: 13px; font-weight: 700; border-radius: 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* Luxury Showcase Hero */
-        .showcase-banner { margin: 30px 4%; background: linear-gradient(rgba(0,0,0,0.2), rgba(13, 14, 18, 1)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1525&auto=format&fit=crop') center/cover; height: 350px; border-radius: 16px; border: var(--border-gold); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; box-shadow: inset 0 0 100px rgba(0,0,0,0.8); }
-        .showcase-banner h1 { font-size: 38px; font-weight: 800; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        .showcase-banner h1 span { color: var(--accent-gold); }
-        .showcase-banner p { color: var(--text-gray); font-size: 15px; max-width: 600px; margin-bottom: 25px; line-height: 1.6; }
+        /* Premium Auto Slider Container */
+        .slider-container { margin: 30px 4%; height: 350px; border-radius: 16px; border: var(--border-gold); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .slide-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; }
+        .slide-item.active { opacity: 1; }
+        .slide-item::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.1), rgba(13, 14, 18, 0.95)); z-index: 1; }
+        
+        .slide-content { position: relative; z-index: 2; max-width: 700px; }
+        .slide-content h1 { font-size: 38px; font-weight: 800; letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase; text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
+        .slide-content h1 span { color: var(--accent-gold); }
+        .slide-content p { color: #e1e3e6; font-size: 15px; margin-bottom: 20px; line-height: 1.6; text-shadow: 0 2px 8px rgba(0,0,0,0.8); }
+
+        /* Slider Dots */
+        .slider-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 10px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; background-color: rgba(255,255,255,0.3); cursor: pointer; transition: 0.3s; }
+        .dot.active { background-color: var(--accent-gold); width: 25px; border-radius: 5px; }
 
         /* Section Container */
         .content-section { padding: 20px 4%; }
@@ -64,7 +72,7 @@
         /* Video Premium Grid */
         .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
         
-        /* Video Card Design from 1000016960.png (Gold Borders & Clean Bottom) */
+        /* Video Card Design */
         .video-card { background-color: var(--bg-card); border: 1px solid rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; transition: 0.4s ease; display: flex; flex-direction: column; cursor: pointer; position: relative; }
         .video-card:hover { transform: translateY(-8px); border: 1px solid var(--accent-gold); box-shadow: 0 12px 25px rgba(197, 168, 128, 0.15); }
         
@@ -124,13 +132,13 @@
             header { padding: 15px 5%; }
             .search-container { width: 180px; }
             .btn-premium { padding: 8px 14px; font-size: 11px; }
-            .showcase-banner h1 { font-size: 26px; }
+            .slide-content h1 { font-size: 24px; }
+            .slider-container { height: 280px; }
         }
     </style>
 </head>
 <body>
 
-<!-- 18+ Verification Guard -->
 <div class="gate-overlay" id="ageGate">
     <div class="gate-modal">
         <div class="gate-icon">🔞</div>
@@ -143,7 +151,6 @@
     </div>
 </div>
 
-<!-- Left Navigation Sidebar -->
 <aside>
     <div class="sidebar-brand">
         <h2>VELOUR<span>PLATINUM</span></h2>
@@ -157,7 +164,6 @@
     </ul>
 </aside>
 
-<!-- Right Main Area -->
 <main>
     <header>
         <div class="search-container">
@@ -171,11 +177,33 @@
 
     <div class="spinning-loader" id="mainLoader"></div>
 
-    <!-- Home Hub Layout Grid -->
     <div id="homeLayoutBox">
-        <div class="showcase-banner">
-            <h1>VELOUR <span>PLATINUM</span></h1>
-            <p>Experience ultra-clear speed streaming. Updates are completely randomized upon every visit to ensure content variety. (Use VPN for non-stop streaming)</p>
+        
+        <div class="slider-container">
+            <div class="slide-item active" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1525&auto=format&fit=crop');">
+                <div class="slide-content">
+                    <h1>VELOUR <span>PLATINUM</span></h1>
+                    <p>Experience ultra-clear cinematic speed streaming. Updates are completely randomized upon every visit to ensure maximum content variety.</p>
+                </div>
+            </div>
+            <div class="slide-item" style="background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1470&auto=format&fit=crop');">
+                <div class="slide-content">
+                    <h1>4K ULTRA <span>NETWORKS</span></h1>
+                    <p>Unlock premium international updates instantly. High privacy protocols enabled. Stable VPN connection recommended for optimal performance.</p>
+                </div>
+            </div>
+            <div class="slide-item" style="background-image: url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1470&auto=format&fit=crop');">
+                <div class="slide-content">
+                    <h1>EXCLUSIVELY <span>RANDOMIZED</span></h1>
+                    <p>Never view the exact same layout twice. Our intelligent script refreshes content sequences on demand for non-stop entertainment.</p>
+                </div>
+            </div>
+            
+            <div class="slider-dots">
+                <div class="dot active" onclick="jumpToSlide(0)"></div>
+                <div class="dot" onclick="jumpToSlide(1)"></div>
+                <div class="dot" onclick="jumpToSlide(2)"></div>
+            </div>
         </div>
         
         <div class="content-section">
@@ -190,7 +218,6 @@
         </div>
     </div>
 
-    <!-- Video Theater Layout Grid -->
     <div class="streaming-container" id="theaterLayoutBox">
         <div class="player-left-panel">
             <div class="cinema-wrapper">
@@ -212,6 +239,32 @@
     let activeKeyword = 'myanmar'; 
     let masterPageNo = 1;      
     let sidePageNo = 1;      
+    
+    // Slider Setup Logic
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.slide-item');
+    const dots = document.querySelectorAll('.dot');
+    let sliderTimer = setInterval(autoAdvanceSlides, 5000); // 5 seconds interval
+
+    function autoAdvanceSlides() {
+        changeSlide((currentSlideIndex + 1) % slides.length);
+    }
+
+    function changeSlide(nextIndex) {
+        slides[currentSlideIndex].classList.remove('active');
+        dots[currentSlideIndex].classList.remove('active');
+        
+        currentSlideIndex = nextIndex;
+        
+        slides[currentSlideIndex].classList.add('active');
+        dots[currentSlideIndex].classList.add('active');
+    }
+
+    function jumpToSlide(index) {
+        clearInterval(sliderTimer); // Reset timer on manual touch
+        changeSlide(index);
+        sliderTimer = setInterval(autoAdvanceSlides, 5000); // Restart automatic timer
+    }
 
     document.addEventListener("DOMContentLoaded", () => {
         if (localStorage.getItem("platinum_verified") === "true") {
@@ -230,7 +283,6 @@
         window.location.href = "https://www.google.com";
     }
 
-    // Modern Fisher-Yates Randomizer to prevent repeated video lists
     function mixContentSequence(array) {
         let currentIndex = array.length, tempValue, randomIdx;
         while (currentIndex !== 0) {
@@ -244,7 +296,6 @@
     }
 
     function bootNetwork() {
-        // Generates random index page to fully randomize look upon entry
         masterPageNo = Math.floor(Math.random() * 20) + 1; 
         pullEpornerData(activeKeyword, masterPageNo, false);
     }
@@ -265,7 +316,6 @@
             const dataPackage = await reaction.json();
 
             if (dataPackage && dataPackage.videos && dataPackage.videos.length > 0) {
-                // Randomizes the data block array thoroughly before appending to HTML layout
                 const fullyMixedVideos = mixContentSequence(dataPackage.videos);
                 injectVideoCards(fullyMixedVideos, layoutGrid);
                 paginationBox.style.display = "block";
@@ -372,7 +422,6 @@
     }
 
     function triggerSearchCategory(targetCategory) {
-        // Highlight logic for sidebar items
         document.querySelectorAll('.menu-item').forEach(element => {
             element.classList.remove('active');
         });
