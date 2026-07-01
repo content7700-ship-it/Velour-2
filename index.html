@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELOUR PLATINUM - Premium Entertainment</title>
+    
+    <!-- Adsterra Popunder Code -->
+    <script src="https://pl30149725.effectivecpmnetwork.com/72/36/71/723671d6fb365692e8aae17ed2085563.js"></script>
+
+    <!-- Adsterra Social Bar Code -->
+    <script src="https://pl30149726.effectivecpmnetwork.com/22/3d/45/223d45507315c360b0744fa53a9dbbfc.js"></script>
+
+    <style>
+        :root {
+            --bg-main: #0d0e12;
+            --bg-sidebar: #13151b;
+            --bg-card: #191b22;
+            --accent-gold: #c5a880;
+            --accent-gold-hover: #e5c9a3;
+            --text-white: #ffffff;
+            --text-gray: #8e929a;
+            --border-gold: 1px solid rgba(197, 168, 128, 0.3);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-main); color: var(--text-white); font-family: 'Segoe UI', Roboto, sans-serif; display: flex; min-height: 100vh; overflow-x: hidden; }
+
+        /* Left Sidebar Layout (From Image 1000016960.png) */
+        aside { width: 260px; background-color: var(--bg-sidebar); border-right: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; flex-shrink: 0; position: fixed; height: 100vh; z-index: 99; }
+        .sidebar-brand { padding: 30px 25px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.03); }
+        .sidebar-brand h2 { font-size: 20px; font-weight: 800; color: var(--text-white); letter-spacing: 1.5px; }
+        .sidebar-brand h2 span { color: var(--accent-gold); display: block; font-size: 11px; margin-top: 5px; font-weight: 400; letter-spacing: 3px; }
+        
+        .menu-list { list-style: none; padding: 25px 15px; display: flex; flex-direction: column; gap: 8px; }
+        .menu-item { display: flex; align-items: center; gap: 15px; padding: 14px 20px; border-radius: 8px; color: var(--text-gray); text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; cursor: pointer; }
+        .menu-item:hover, .menu-item.active { background: linear-gradient(90deg, rgba(197, 168, 128, 0.15) 0%, rgba(0,0,0,0) 100%); color: var(--accent-gold); border-left: 3px solid var(--accent-gold); }
+        .menu-item i { font-size: 18px; }
+
+        /* Main Content Window */
+        main { margin-left: 260px; flex-grow: 1; padding-bottom: 60px; min-width: 0; }
+
+        /* Top Header */
+        header { background-color: rgba(13, 14, 18, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 98; padding: 20px 4%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.03); }
+        .search-container { position: relative; width: 400px; max-width: 100%; }
+        .search-container input { width: 100%; background-color: #1a1d26; border: 1px solid rgba(255,255,255,0.08); border-radius: 25px; padding: 12px 25px 12px 45px; color: var(--text-white); font-size: 14px; transition: 0.3s; }
+        .search-container input:focus { outline: none; border-color: var(--accent-gold); background-color: #202430; box-shadow: 0 0 10px rgba(197, 168, 128, 0.2); }
+        .search-container .search-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--text-gray); font-size: 15px; }
+
+        .nav-buttons { display: flex; gap: 15px; align-items: center; }
+        .btn-premium { background: linear-gradient(135deg, #c5a880 0%, #a3855c 100%); color: #000; border: none; padding: 10px 22px; font-size: 13px; font-weight: 700; border-radius: 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Luxury Showcase Hero */
+        .showcase-banner { margin: 30px 4%; background: linear-gradient(rgba(0,0,0,0.2), rgba(13, 14, 18, 1)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1525&auto=format&fit=crop') center/cover; height: 350px; border-radius: 16px; border: var(--border-gold); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; box-shadow: inset 0 0 100px rgba(0,0,0,0.8); }
+        .showcase-banner h1 { font-size: 38px; font-weight: 800; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .showcase-banner h1 span { color: var(--accent-gold); }
+        .showcase-banner p { color: var(--text-gray); font-size: 15px; max-width: 600px; margin-bottom: 25px; line-height: 1.6; }
+
+        /* Section Container */
+        .content-section { padding: 20px 4%; }
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+        .section-title { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; border-left: 3px solid var(--accent-gold); padding-left: 12px; }
+
+        /* Video Premium Grid */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        
+        /* Video Card Design from 1000016960.png (Gold Borders & Clean Bottom) */
+        .video-card { background-color: var(--bg-card); border: 1px solid rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; transition: 0.4s ease; display: flex; flex-direction: column; cursor: pointer; position: relative; }
+        .video-card:hover { transform: translateY(-8px); border: 1px solid var(--accent-gold); box-shadow: 0 12px 25px rgba(197, 168, 128, 0.15); }
+        
+        .thumb-box { position: relative; width: 100%; padding-top: 56.25%; background-color: #1a1a1a; overflow: hidden; }
+        .thumb-box img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .video-card:hover .thumb-box img { transform: scale(1.06); }
+        .badge-duration { position: absolute; bottom: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.85); padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; color: var(--accent-gold); border: 1px solid rgba(197, 168, 128, 0.3); }
+        
+        .video-meta-info { padding: 18px; display: flex; flex-direction: column; flex-grow: 1; }
+        .video-title { font-size: 14px; font-weight: 600; line-height: 1.5; margin-bottom: 12px; height: 42px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; color: #f0f0f2; }
+        .video-stats { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-gray); margin-top: auto; }
+        .stars { color: var(--accent-gold); font-size: 11px; }
+
+        /* Infinite Load More Styling */
+        .center-btn-box { text-align: center; margin: 40px 0; }
+        .btn-luxury-load { background-color: transparent; color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 12px 40px; font-size: 14px; font-weight: 700; border-radius: 30px; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-luxury-load:hover { background-color: var(--accent-gold); color: #000; box-shadow: 0 0 20px rgba(197, 168, 128, 0.3); }
+
+        /* Video Streaming Page View */
+        .streaming-container { display: none; grid-template-columns: 2.4fr 1fr; gap: 35px; padding: 20px 4%; margin-top: 10px; }
+        .player-left-panel { width: 100%; }
+        .cinema-wrapper { width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 16px; overflow: hidden; border: var(--border-gold); box-shadow: 0 15px 35px rgba(0,0,0,0.7); }
+        .cinema-wrapper iframe { width: 100%; height: 100%; border: none; }
+        .cinema-title { font-size: 24px; font-weight: 700; margin: 25px 0 12px 0; color: #fff; line-height: 1.4; }
+        
+        .sidebar-right-panel { display: flex; flex-direction: column; gap: 20px; }
+
+        /* Age Verification Overlay */
+        .gate-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(7, 8, 10, 0.98); display: flex; align-items: center; justify-content: center; z-index: 99999; backdrop-filter: blur(12px); padding: 20px; }
+        .gate-modal { background-color: var(--bg-sidebar); border: var(--border-gold); border-radius: 20px; max-width: 520px; width: 100%; padding: 45px 35px; text-align: center; box-shadow: 0 0 40px rgba(197, 168, 128, 0.1); }
+        .gate-icon { font-size: 55px; margin-bottom: 20px; color: var(--accent-gold); }
+        .gate-modal h2 { font-size: 24px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        .gate-modal p { color: var(--text-gray); font-size: 14px; line-height: 1.6; margin-bottom: 35px; }
+        .gate-actions { display: flex; gap: 15px; justify-content: center; }
+        .gate-btn { padding: 14px 35px; font-size: 14px; font-weight: 700; border-radius: 30px; cursor: pointer; min-width: 140px; text-transform: uppercase; transition: 0.3s; }
+        .gate-confirm { background: linear-gradient(135deg, #c5a880 0%, #a3855c 100%); color: #000; border: none; }
+        .gate-confirm:hover { transform: scale(1.03); }
+        .gate-cancel { background-color: transparent; color: var(--text-gray); border: 1px solid rgba(255,255,255,0.1); }
+        
+        .spinning-loader { display: block; margin: 50px auto; border: 3px solid #1a1d26; border-top: 3px solid var(--accent-gold); border-radius: 50%; width: 45px; height: 45px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .error-log { text-align: center; color: var(--text-gray); padding: 50px; grid-column: 1 / -1; font-size: 14px; }
+
+        /* Responsive Layout fixes */
+        @media (max-width: 1024px) {
+            aside { width: 80px; }
+            aside .sidebar-brand h2, aside .menu-item span { display: none; }
+            main { margin-left: 80px; }
+            .sidebar-brand { padding: 20px 10px; }
+            .menu-item { justify-content: center; padding: 15px; }
+            .streaming-container { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            aside { display: none; }
+            main { margin-left: 0; }
+            header { padding: 15px 5%; }
+            .search-container { width: 180px; }
+            .btn-premium { padding: 8px 14px; font-size: 11px; }
+            .showcase-banner h1 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 18+ Verification Guard -->
+<div class="gate-overlay" id="ageGate">
+    <div class="gate-modal">
+        <div class="gate-icon">🔞</div>
+        <h2>Velour Platinum Premium</h2>
+        <p>This network contains hyper-exclusive adult content. You must be 18 years of age or older and agree to our terms of privacy to grant access.</p>
+        <div class="gate-actions">
+            <button class="gate-btn gate-confirm" onclick="unlockAccess()">Access Network</button>
+            <button class="gate-btn gate-cancel" onclick="denyAccess()">Exit</button>
+        </div>
+    </div>
+</div>
+
+<!-- Left Navigation Sidebar -->
+<aside>
+    <div class="sidebar-brand">
+        <h2>VELOUR<span>PLATINUM</span></h2>
+    </div>
+    <ul class="menu-list">
+        <li class="menu-item active" onclick="goHomeLayout()"><i class="icon">✨</i> <span>Exclusive Series</span></li>
+        <li class="menu-item" onclick="triggerSearchCategory('asian')"><i class="icon">🌏</i> <span>Asian Premium</span></li>
+        <li class="menu-item" onclick="triggerSearchCategory('romance')"><i class="icon">💖</i> <span>Cinematic Shorts</span></li>
+        <li class="menu-item" onclick="triggerSearchCategory('cosplay')"><i class="icon">🎭</i> <span>Creators Content</span></li>
+        <li class="menu-item" onclick="triggerSearchCategory('amateur')"><i class="icon">📸</i> <span>Amateur Diary</span></li>
+    </ul>
+</aside>
+
+<!-- Right Main Area -->
+<main>
+    <header>
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="querySearch" placeholder="Search premium series..." onkeyup="if(event.key === 'Enter') executeSearch()">
+        </div>
+        <div class="nav-buttons">
+            <button class="btn-premium" onclick="goHomeLayout()">Home Hub</button>
+        </div>
+    </header>
+
+    <div class="spinning-loader" id="mainLoader"></div>
+
+    <!-- Home Hub Layout Grid -->
+    <div id="homeLayoutBox">
+        <div class="showcase-banner">
+            <h1>VELOUR <span>PLATINUM</span></h1>
+            <p>Experience ultra-clear speed streaming. Updates are completely randomized upon every visit to ensure content variety. (Use VPN for non-stop streaming)</p>
+        </div>
+        
+        <div class="content-section">
+            <div class="section-header">
+                <h3 class="section-title" id="gridDisplayTitle">Featured Premieres</h3>
+            </div>
+            <div class="video-grid" id="videoLayoutGrid"></div>
+            
+            <div class="center-btn-box" id="paginationBox" style="display: none;">
+                <button class="btn-luxury-load" onclick="extendContentFeed()">Load More Contents 🔄</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Theater Layout Grid -->
+    <div class="streaming-container" id="theaterLayoutBox">
+        <div class="player-left-panel">
+            <div class="cinema-wrapper">
+                <iframe id="theaterFrame" src="" allowfullscreen></iframe>
+            </div>
+            <h2 class="cinema-title" id="theaterTitle">Loading Premium Content Title...</h2>
+            <div style="color: var(--accent-gold); font-size: 13px; margin-bottom: 20px;" id="theaterStats">👁️ 0 Views</div>
+        </div>
+        
+        <div class="sidebar-right-panel">
+            <h3 class="section-title">Recommendations</h3>
+            <div id="theaterSidebarGrid" style="display: flex; flex-direction: column; gap: 20px;"></div>
+        </div>
+    </div>
+</main>
+
+<script>
+    const EPORNER_API_LINK = 'https://www.eporner.com/api/v2/video/search/';
+    let activeKeyword = 'myanmar'; 
+    let masterPageNo = 1;      
+    let sidePageNo = 1;      
+
+    document.addEventListener("DOMContentLoaded", () => {
+        if (localStorage.getItem("platinum_verified") === "true") {
+            document.getElementById("ageGate").style.display = "none";
+            bootNetwork();
+        }
+    });
+
+    function unlockAccess() {
+        localStorage.setItem("platinum_verified", "true");
+        document.getElementById("ageGate").style.display = "none";
+        bootNetwork();
+    }
+
+    function denyAccess() {
+        window.location.href = "https://www.google.com";
+    }
+
+    // Modern Fisher-Yates Randomizer to prevent repeated video lists
+    function mixContentSequence(array) {
+        let currentIndex = array.length, tempValue, randomIdx;
+        while (currentIndex !== 0) {
+            randomIdx = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            tempValue = array[currentIndex];
+            array[currentIndex] = array[randomIdx];
+            array[randomIdx] = tempValue;
+        }
+        return array;
+    }
+
+    function bootNetwork() {
+        // Generates random index page to fully randomize look upon entry
+        masterPageNo = Math.floor(Math.random() * 20) + 1; 
+        pullEpornerData(activeKeyword, masterPageNo, false);
+    }
+
+    async function pullEpornerData(keyword, page, isAppendMode = false) {
+        const loader = document.getElementById("mainLoader");
+        const layoutGrid = document.getElementById("videoLayoutGrid");
+        const paginationBox = document.getElementById("paginationBox");
+        
+        loader.style.display = "block";
+        paginationBox.style.display = "none";
+        if (!isAppendMode) { layoutGrid.innerHTML = ""; }
+
+        const cleanUrl = `${EPORNER_API_LINK}?query=${encodeURIComponent(keyword)}&per_page=24&page=${page}&thumbsize=big`;
+
+        try {
+            const reaction = await fetch(cleanUrl);
+            const dataPackage = await reaction.json();
+
+            if (dataPackage && dataPackage.videos && dataPackage.videos.length > 0) {
+                // Randomizes the data block array thoroughly before appending to HTML layout
+                const fullyMixedVideos = mixContentSequence(dataPackage.videos);
+                injectVideoCards(fullyMixedVideos, layoutGrid);
+                paginationBox.style.display = "block";
+            } else {
+                if (!isAppendMode) {
+                    layoutGrid.innerHTML = `<div class="error-log">No exclusive content match found. Try a different search term.</div>`;
+                }
+            }
+        } catch (fail) {
+            console.error("API Fetch Failure Log:", fail);
+            if (!isAppendMode) {
+                layoutGrid.innerHTML = `<div class="error-log">Secure handshake failed. Please ensure your VPN is actively turned on.</div>`;
+            }
+        } finally {
+            loader.style.display = "none";
+        }
+    }
+
+    function injectVideoCards(videoBlock, targetElement) {
+        videoBlock.forEach(video => {
+            const title = video.title;
+            const previewImg = video.default_thumb ? video.default_thumb.src : '';
+            const timestamp = `${video.length_min || '00'}:${video.length_sec || '00'}`;
+            const clickCount = parseInt(video.views).toLocaleString();
+            const sourceUrl = video.embed || '';
+
+            const individualCard = document.createElement('div');
+            individualCard.className = 'video-card';
+            individualCard.innerHTML = `
+                <div class="thumb-box">
+                    <img src="${previewImg}" alt="Premium Banner" loading="lazy">
+                    <span class="badge-duration">${timestamp}</span>
+                </div>
+                <div class="video-meta-info">
+                    <h3 class="video-title">${title}</h3>
+                    <div class="video-stats">
+                        <span>👁️ ${clickCount}</span>
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+            `;
+            individualCard.onclick = () => routeToTheaterPage(sourceUrl, title, clickCount);
+            targetElement.appendChild(individualCard);
+        });
+    }
+
+    function extendContentFeed() {
+        masterPageNo++;
+        pullEpornerData(activeKeyword, masterPageNo, true);
+    }
+
+    function routeToTheaterPage(iframeSrc, titleText, totalViews) {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById("homeLayoutBox").style.display = "none";
+        document.getElementById("theaterLayoutBox").style.display = "grid";
+
+        document.getElementById("theaterTitle").innerText = titleText;
+        document.getElementById("theaterStats").innerText = `👁️ ${totalViews} Views / Exclusive Access`;
+        document.getElementById("theaterFrame").src = iframeSrc;
+
+        sidePageNo = Math.floor(Math.random() * 25) + 1;
+        fillTheaterRecommendations();
+    }
+
+    async function fillTheaterRecommendations() {
+        const sideBox = document.getElementById("theaterSidebarGrid");
+        sideBox.innerHTML = "";
+
+        const cleanUrl = `${EPORNER_API_LINK}?query=${encodeURIComponent(activeKeyword)}&per_page=5&page=${sidePageNo}&thumbsize=big`;
+        
+        try {
+            const reaction = await fetch(cleanUrl);
+            const dataPackage = await reaction.json();
+            if (dataPackage && dataPackage.videos && dataPackage.videos.length > 0) {
+                injectVideoCards(mixContentSequence(dataPackage.videos), sideBox);
+            }
+        } catch (err) {
+            console.error("Sidebar loading trace warning:", err);
+        }
+    }
+
+    function goHomeLayout() {
+        document.getElementById("theaterFrame").src = "";
+        document.getElementById("theaterLayoutBox").style.display = "none";
+        document.getElementById("homeLayoutBox").style.display = "block";
+        document.getElementById("querySearch").value = "";
+        document.getElementById("gridDisplayTitle").innerText = "Featured Premieres";
+        activeKeyword = 'myanmar';
+        bootNetwork();
+    }
+
+    function executeSearch() {
+        const keywordInput = document.getElementById("querySearch").value.trim();
+        if (keywordInput !== "") {
+            document.getElementById("theaterFrame").src = "";
+            document.getElementById("theaterLayoutBox").style.display = "none";
+            document.getElementById("homeLayoutBox").style.display = "block";
+            
+            document.getElementById("gridDisplayTitle").innerText = `Results for: ${keywordInput}`;
+            activeKeyword = keywordInput;
+            masterPageNo = 1;
+            pullEpornerData(activeKeyword, masterPageNo, false);
+        }
+    }
+
+    function triggerSearchCategory(targetCategory) {
+        // Highlight logic for sidebar items
+        document.querySelectorAll('.menu-item').forEach(element => {
+            element.classList.remove('active');
+        });
+        event.currentTarget.classList.add('active');
+
+        document.getElementById("theaterFrame").src = "";
+        document.getElementById("theaterLayoutBox").style.display = "none";
+        document.getElementById("homeLayoutBox").style.display = "block";
+        
+        document.getElementById("gridDisplayTitle").innerText = `${targetCategory} Collection`;
+        activeKeyword = targetCategory;
+        masterPageNo = Math.floor(Math.random() * 5) + 1;
+        pullEpornerData(activeKeyword, masterPageNo, false);
+    }
+</script>
+
+</body>
+</html>
